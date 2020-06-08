@@ -13,14 +13,7 @@ const Post = require("../../models/Post");
 
 router.post(
   "/",
-  [
-    auth,
-    [
-      check("text", "Text is required").not().isEmpty(),
-      check("titel", "Titel is required").not().isEmpty(),
-      check("description", "description is required").not().isEmpty(),
-    ],
-  ],
+  [auth, [check("text", "Text is required").not().isEmpty()]],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -169,7 +162,7 @@ router.post(
     auth,
     [
       check("text", "Text is required").not().isEmpty(),
-      check("titel", "Titel is required").not().isEmpty(),
+      // check("titel", "Titel is required").not().isEmpty(),
     ],
   ],
   async (req, res) => {

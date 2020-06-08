@@ -16,7 +16,6 @@ const CreateProfile = ({ createProfile, history }) => {
     twitter: "",
   });
 
-  const [displaySocialInputs, toggleSocialInputs] = useState(false);
   const {
     website,
     location,
