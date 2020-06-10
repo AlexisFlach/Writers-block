@@ -22,10 +22,10 @@ const Landing = ({ isAuthenticated }) => {
             <h1 className="landing-heading landing-heading-1">Writers Block</h1>
           </div>
           <p className="landing-para">
-            We are not - we are not keeping up with other websites. Lorem Ipsum
-            best not make any more threats to your website. It will be met with
-            fire and fury like the world has never seen. Does everybody know
-            that pig
+            Thank you for visiting! This site was built using the MERN-stack,
+            and was created in order for me practise MongoDB and Redux. Now, I
+            am looking to implement more features such as the ability for
+            readers to donate moooney to the writer. That would be really cool.
           </p>
           <div className="buttons">
             <Link to="/register">
@@ -39,11 +39,6 @@ const Landing = ({ isAuthenticated }) => {
               </button>
             </Link>
           </div>
-        </div>
-      </div>
-      <div className="container">
-        <div>
-          <Posts />
         </div>
       </div>
     </Fragment>
