@@ -27,13 +27,16 @@ const Login = ({ login, isAuthenticated }) => {
   }
   return (
     <div className="auth">
-      <div>
-        <h3>Login</h3>
-        <p>lorem10 </p>
+      <div className="auth-box">
+        <h3>Welcome back!</h3>
+        <p>
+          Login to your account <br></br>and see whats new!{" "}
+        </p>
       </div>
       <div>
         <form onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">
+            <h2>Login</h2>
             <input
               type="email"
               placeholder="Email"
@@ -53,7 +56,7 @@ const Login = ({ login, isAuthenticated }) => {
           </div>
 
           <div className="form-group">
-            <button>Submit</button>
+            <button className="button">Submit</button>
           </div>
         </form>
         <p>

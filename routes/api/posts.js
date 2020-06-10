@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../../middleware/auth");
 const { check, validationResult } = require("express-validator");
-
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
 const Post = require("../../models/Post");
@@ -40,40 +39,46 @@ router.post(
     }
   }
 );
+// @route   Post /api/posts/displaypost
+// @desc    Create a post
+// @access  Private
+
+router.post(
+  "/displaypost",
+  [auth, [check("text", "Text is required").not().isEmpty()]],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    try {
+      const user = await User.findById(req.user.id).select("-password");
+
+      const newPost = new DisplayPost({
+        text: req.body.text,
+        titel: req.body.titel,
+        description: req.body.description,
+        cover: req.body.cover,
+        name: user.name,
+        user: req.user.id,
+      });
+
+      const post = await newPost.save();
+      res.json(post);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server Error");
+    }
+  }
+);
 
 // @route   Get /api/posts
 // @desc    Get all posts
 // @access  Private
 
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
   try {
     const posts = await Post.find().sort({ date: -1 });
-    res.json(posts);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server Error");
-  }
-});
-// @route   Get /api/posts/displayposts/latest
-// @desc    Get four latest posts to display on landing page
-// @access  Public
-
-router.get("/displayposts/latest", async (req, res) => {
-  try {
-    const posts = await Post.find().limit(4).sort({ date: -1 });
-    res.json(posts);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server Error");
-  }
-});
-// @route   Get /api/posts/displaypopularposts
-// @desc    Get the four most popular posts to display on landing page
-// @access  Test
-
-router.get("/displayposts/popular", async (req, res) => {
-  try {
-    const posts = await Post.find().limit(4).sort({ likes: -1 });
     res.json(posts);
   } catch (err) {
     console.error(err.message);

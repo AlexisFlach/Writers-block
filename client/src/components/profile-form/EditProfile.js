@@ -14,7 +14,6 @@ const EditProfile = ({
     website: "",
     location: "",
     bio: "",
-    facebook: "",
   });
 
   useEffect(() => {
@@ -23,8 +22,6 @@ const EditProfile = ({
       website: loading || !profile.website ? "" : profile.website,
       location: loading || !profile.location ? "" : profile.location,
       bio: loading || !profile.bio ? "" : profile.bio,
-      facebook:
-        loading || !profile.social.facebook ? "" : profile.social.facebook,
     });
   }, [loading]);
 
@@ -69,16 +66,7 @@ const EditProfile = ({
         </div>
 
         <div className="form-group">
-          <input
-            type="text"
-            placeholder="facebook"
-            name="facebook"
-            value={facebook}
-            onChange={(e) => onChange(e)}
-          ></input>
-        </div>
-        <div className="form-group">
-          <button>Submit</button>
+          <button className="button">Submit</button>
         </div>
         <Link to="/dashboard">Go back</Link>
       </form>

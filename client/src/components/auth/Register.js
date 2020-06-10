@@ -35,9 +35,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <div className="auth">
-      <div>
-        <h3>Register</h3>
-        <p>lorem10 </p>
+      <div className="auth-box">
+        <h3>Hi there!</h3>
+        <p>
+          Register to WritersBlock and
+          <br></br> let others enjoy your work!
+        </p>
       </div>
       <div>
         <h1>Register</h1>
@@ -79,7 +82,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             ></input>
           </div>
           <div className="form-group">
-            <button>Submit</button>
+            <button className="button">Submit</button>
           </div>
         </form>
         <p>

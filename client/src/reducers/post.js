@@ -6,7 +6,6 @@ import {
   GET_POST,
   ADD_COMMENT,
   REMOVE_COMMENT,
-  GET_DISPLAY_POSTS,
 } from "../actions/types";
 
 const initialState = {
@@ -24,11 +23,6 @@ export default function (state = initialState, action) {
         ...state,
         posts: payload,
         loading: false,
-      };
-    case GET_DISPLAY_POSTS:
-      return {
-        ...state,
-        posts: payload,
       };
 
     case GET_POST:

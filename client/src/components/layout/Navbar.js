@@ -11,51 +11,37 @@ const imgStyle = {
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <Fragment>
-      <li>
+      <li className="landing-para">
         <Link to="/dashboard">Dashboard</Link>
       </li>
-      <li>
+      <li className="landing-para">
         {" "}
-        <Link to="/profiles">profiles</Link>
+        <Link to="/profiles">Profiles</Link>
       </li>
-      <li>
+      <li className="landing-para">
         {" "}
         <Link to="/posts">Posts</Link>
       </li>
-      <li>
-        <a onClick={logout} href="#!">
+      <li className="landing-para">
+        <a onClick={logout} href="/">
           Logout
         </a>
       </li>
     </Fragment>
   );
 
-  const guestLinks = (
-    <Fragment>
-      <li>
-        {" "}
-        <Link to="/profiles">profiles</Link>
-      </li>
-      <li>
-        {" "}
-        <Link to="/posts">Posts</Link>
-      </li>
-      <li>
-        <a onClick={logout} href="#!">
-          Logout
-        </a>
-      </li>
-    </Fragment>
-  );
+  const guestLinks = <Fragment></Fragment>;
   return (
     <Fragment>
       <nav className="flex justify-between align-center">
-        <img
-          style={imgStyle}
-          src="/img/rsz_about-me-monkey.png"
-          alt="logo"
-          className="logo"
-        ></img>
+        <Link to="/">
+          <img
+            style={imgStyle}
+            src="/img/rsz_about-me-monkey.png"
+            alt="logo"
+            className="logo"
+          ></img>
+        </Link>
 
         {/* <div>
             <button type="button">
@@ -69,7 +55,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
         {!loading && (
           <ul className="list-none flex">
-            {isAuthenticated || false ? authLinks : guestLinks}
+            {isAuthenticated ? authLinks : guestLinks}
           </ul>
         )}
       </nav>

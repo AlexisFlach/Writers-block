@@ -20,23 +20,27 @@ const Dashboard = ({
     <Spinner />
   ) : (
     <Fragment>
-      <h1>Dashboard</h1>
-      <p>Welcome {user && user.name}</p>
-      {profile !== null ? (
-        <Fragment>
-          <DashboardActions />
-          <div>
-            <button onClick={() => deleteAccount()}>Delete account</button>
-          </div>
-        </Fragment>
-      ) : (
-        <Fragment>
-          <p>You have yet setup your profile. come on!</p>
-          <Link to="/create-profile" classname="btn">
-            Do it!
-          </Link>
-        </Fragment>
-      )}
+      <div className="dashboard">
+        <h2>Welcome {user && user.name}</h2>
+        {profile !== null ? (
+          <Fragment>
+            <DashboardActions />
+            <div>
+              <button className="button" onClick={() => deleteAccount()}>
+                Delete account
+              </button>
+            </div>
+          </Fragment>
+        ) : (
+          <Fragment>
+            <p>You have yet setup your profile. come on!</p>
+
+            <Link to="/create-profile" classname="btn">
+              <button className="button"> Do it!</button>
+            </Link>
+          </Fragment>
+        )}
+      </div>
     </Fragment>
   );
 };

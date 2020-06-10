@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import DisplayPosts from "../posts/DisplayPosts";
+import Posts from "../posts/Posts";
 import Register from "../auth/Register";
 import Login from "../auth/Login";
 import { connect } from "react-redux";
@@ -18,27 +18,33 @@ const Landing = ({ isAuthenticated }) => {
     <Fragment>
       <div className="landing-page">
         <div className="flex-box">
-          <h1 className="landing-heading landing-heading-1">Writers Block</h1>
-          <p>
+          <div className="background-white">
+            <h1 className="landing-heading landing-heading-1">Writers Block</h1>
+          </div>
+          <p className="landing-para">
             We are not - we are not keeping up with other websites. Lorem Ipsum
             best not make any more threats to your website. It will be met with
             fire and fury like the world has never seen. Does everybody know
-            that pig named Lorem Ipsum? An ‘extremely credible source’ has
-            called my office and told me that Barack Obama’s placeholder text is
-            a fraud.
+            that pig
           </p>
           <div className="buttons">
             <Link to="/register">
-              <button type="button">Register</button>
+              <button className="button" type="button">
+                Register
+              </button>
             </Link>
             <Link to="/login">
-              <button type="button">Login</button>
+              <button className="button" type="button">
+                Login
+              </button>
             </Link>
           </div>
         </div>
       </div>
-      <div>
-        <DisplayPosts />
+      <div className="container">
+        <div>
+          <Posts />
+        </div>
       </div>
     </Fragment>
   );
