@@ -1,4 +1,0 @@
-{
-  "mongoURI": "mongodb+srv://padoin:Padoin123@writersblock.hbhgz.mongodb.net/WritersBlock?retryWrites=true&w=majority",
-  "jwtSecret": "myLittleSecret"
-}
