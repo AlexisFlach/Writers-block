@@ -1,0 +1,210 @@
+@font-face {
+  font-family: rough;
+  src: url(/fonts/impact-label/ImpactLabel.ttf);
+}
+
+@font-face {
+  font-family: usualsuspect;
+  src: url(/fonts/raleway/Raleway-Regular.ttf);
+}
+
+body {
+  font-family: usualsuspect;
+}
+.landing-heading {
+  font-family: rough;
+  font-size: 3rem;
+}
+
+.rough {
+  font-family: rough;
+}
+.text-black {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.btn {
+  display: inline-block;
+}
+img {
+  height: 100px;
+}
+
+.landing-para {
+  font-family: typer;
+  line-height: 2;
+  font-size: 1.3rem;
+  margin-top: 3em;
+}
+
+nav {
+  height: 100px;
+}
+
+.button {
+  font-family: rough;
+  border: none;
+  font-size: 2rem;
+  padding: 20px;
+  background-color: white;
+  color: black;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+/* flex */
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.list-none {
+  list-style: none;
+}
+
+li {
+  padding: 1.2rem;
+}
+
+li a {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1rem;
+}
+
+.landing-page {
+  display: flex;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.flex-landing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.flex-box {
+  width: 40vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  margin-top: 100px;
+}
+
+.landing-heading {
+  padding: 1.4rem 2rem;
+  display: inline;
+}
+
+.landing-description {
+  padding: 2rem;
+}
+
+.auth {
+  font-family: typer;
+  height: 60vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  font-family: usualsuspect;
+}
+
+.auth-box {
+  padding: 30px;
+  font-size: 2rem;
+
+  background-color: white;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  font-family: typer;
+  grid-gap: 20px;
+}
+
+.post-display {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.post-display img {
+  height: 200px;
+  width: auto;
+  margin: 10px;
+}
+.post-display h4 {
+  font-size: rem;
+}
+.post-card {
+  width: 300px;
+}
+
+/* form */
+
+/* Forms */
+.form-group {
+  margin: 1.2rem 0;
+}
+
+.form-text {
+  display: block;
+  margin-top: 0.3rem;
+  color: #888;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: left;
+}
+
+.table th {
+  background: var(--light-color);
+}
