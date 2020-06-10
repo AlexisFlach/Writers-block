@@ -23,8 +23,8 @@ const Landing = ({ isAuthenticated }) => {
           </div>
           <p className="landing-para">
             Thank you for visiting! This site was built using the MERN-stack,
-            and was created in order for me practise MongoDB and Redux. Now, I
-            am looking to implement more features such as the ability for
+            and was created in order for me to practise MongoDB and Redux. Now,
+            I am looking to implement more features such as the ability for
             readers to donate moooney to the writer. That would be really cool.
           </p>
           <div className="buttons">
