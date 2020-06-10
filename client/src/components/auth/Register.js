@@ -34,54 +34,60 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   }
 
   return (
-    <Fragment>
-      <h1>Register</h1>
-      <form onSubmit={(e) => onSubmit(e)}>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Name"
-            name="name"
-            value={name}
-            onChange={(e) => onChange(e)}
-          ></input>
-        </div>
-        <div className="form-group">
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            value={email}
-            onChange={(e) => onChange(e)}
-          ></input>
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="password"
-            name="password"
-            value={password}
-            onChange={(e) => onChange(e)}
-          ></input>
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="password2"
-            name="password2"
-            value={password2}
-            onChange={(e) => onChange(e)}
-          ></input>
-        </div>
-        <div className="form-group">
-          <button>Submit</button>
-        </div>
-      </form>
-      <p>
-        Already have an account?
-        <Link to="/login"> Click here</Link>{" "}
-      </p>
-    </Fragment>
+    <div className="auth">
+      <div>
+        <h3>Register</h3>
+        <p>lorem10 </p>
+      </div>
+      <div>
+        <h1>Register</h1>
+        <form onSubmit={(e) => onSubmit(e)}>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              value={name}
+              onChange={(e) => onChange(e)}
+            ></input>
+          </div>
+          <div className="form-group">
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={email}
+              onChange={(e) => onChange(e)}
+            ></input>
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="password"
+              name="password"
+              value={password}
+              onChange={(e) => onChange(e)}
+            ></input>
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="password2"
+              name="password2"
+              value={password2}
+              onChange={(e) => onChange(e)}
+            ></input>
+          </div>
+          <div className="form-group">
+            <button>Submit</button>
+          </div>
+        </form>
+        <p>
+          Already have an account?
+          <Link to="/login"> Click here</Link>{" "}
+        </p>
+      </div>
+    </div>
   );
 };
 

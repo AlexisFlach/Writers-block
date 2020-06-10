@@ -10,6 +10,7 @@ import {
   GET_POST,
   ADD_COMMENT,
   REMOVE_COMMENT,
+  GET_DISPLAY_POSTS,
 } from "./types";
 
 export const getPosts = () => async (dispatch) => {
@@ -24,6 +25,33 @@ export const getPosts = () => async (dispatch) => {
     });
   }
 };
+
+// GET latest posts to display on landing page
+export const getDisplayPosts = () => async (dispatch) => {
+  try {
+    const res = await axios.get("/api/posts/displayposts/latest");
+
+    dispatch({ type: GET_DISPLAY_POSTS, payload: res.data });
+  } catch (err) {
+    dispatch({
+      type: POST_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
+// GET popular posts to display on landing page
+// export const getDisplayPopularPosts = () => async (dispatch) => {
+//   try {
+//     const res = await axios.get("/api/posts/displayposts/popular");
+
+//     dispatch({ type: GET_DISPLAY_POPULAR_POSTS, payload: res.data });
+//   } catch (err) {
+//     dispatch({
+//       type: POST_ERROR,
+//       payload: { msg: err.response.statusText, status: err.response.status },
+//     });
+//   }
+// };
 
 // ADD LIKE
 export const addLike = (id) => async (dispatch) => {

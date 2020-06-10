@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getPosts, addPost } from "../../actions/post";
+import { getPosts } from "../../actions/post";
 import PostItem from "./PostItem";
 import Spinner from "../layout/Spinner";
 import PostForm from "./PostForm";

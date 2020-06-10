@@ -4,9 +4,13 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
 
+const imgStyle = {
+  height: "200px",
+};
+
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
-    <ul>
+    <Fragment>
       <li>
         <Link to="/dashboard">Dashboard</Link>
       </li>
@@ -23,25 +27,53 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           Logout
         </a>
       </li>
-    </ul>
+    </Fragment>
   );
 
   const guestLinks = (
-    <ul>
+    <Fragment>
       <li>
-        <Link to="/Register">Register</Link>
-        <Link to="/Login">Login</Link>
+        {" "}
         <Link to="/profiles">profiles</Link>
       </li>
-    </ul>
+      <li>
+        {" "}
+        <Link to="/posts">Posts</Link>
+      </li>
+      <li>
+        <a onClick={logout} href="#!">
+          Logout
+        </a>
+      </li>
+    </Fragment>
   );
   return (
-    <nav>
-      <h2>Navbar</h2>
-      {!loading && (
-        <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-      )}
-    </nav>
+    <Fragment>
+      <nav className="flex justify-between align-center">
+        <img
+          style={imgStyle}
+          src="/img/rsz_about-me-monkey.png"
+          alt="logo"
+          className="logo"
+        ></img>
+
+        {/* <div>
+            <button type="button">
+              <svg viewBox="0 0 100 80" width="40" height="40">
+                <rect width="100" height="20"></rect>
+                <rect y="30" width="100" height="20"></rect>
+                <rect y="60" width="100" height="20"></rect>
+              </svg>
+            </button>
+          </div> */}
+
+        {!loading && (
+          <ul className="list-none flex">
+            {isAuthenticated || false ? authLinks : guestLinks}
+          </ul>
+        )}
+      </nav>
+    </Fragment>
   );
 };
 

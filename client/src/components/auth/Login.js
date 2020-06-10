@@ -26,36 +26,41 @@ const Login = ({ login, isAuthenticated }) => {
     return <Redirect to="/dashboard" />;
   }
   return (
-    <Fragment>
-      <h1>Sign in</h1>
-      <form onSubmit={(e) => onSubmit(e)}>
-        <div className="form-group">
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            value={email}
-            onChange={(e) => onChange(e)}
-          ></input>
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="password"
-            name="password"
-            value={password}
-            onChange={(e) => onChange(e)}
-          ></input>
-        </div>
+    <div className="auth">
+      <div>
+        <h3>Login</h3>
+        <p>lorem10 </p>
+      </div>
+      <div>
+        <form onSubmit={(e) => onSubmit(e)}>
+          <div className="form-group">
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={email}
+              onChange={(e) => onChange(e)}
+            ></input>
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="password"
+              name="password"
+              value={password}
+              onChange={(e) => onChange(e)}
+            ></input>
+          </div>
 
-        <div className="form-group">
-          <button>Submit</button>
-        </div>
-      </form>
-      <p>
-        <Link to="/register">Not yes a member?</Link>{" "}
-      </p>
-    </Fragment>
+          <div className="form-group">
+            <button>Submit</button>
+          </div>
+        </form>
+        <p>
+          <Link to="/register">Not yes a member?</Link>{" "}
+        </p>
+      </div>
+    </div>
   );
 };
 

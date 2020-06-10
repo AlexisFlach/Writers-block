@@ -45,9 +45,35 @@ router.post(
 // @desc    Get all posts
 // @access  Private
 
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const posts = await Post.find().sort({ date: -1 });
+    res.json(posts);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+// @route   Get /api/posts/displayposts/latest
+// @desc    Get four latest posts to display on landing page
+// @access  Public
+
+router.get("/displayposts/latest", async (req, res) => {
+  try {
+    const posts = await Post.find().limit(4).sort({ date: -1 });
+    res.json(posts);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+// @route   Get /api/posts/displaypopularposts
+// @desc    Get the four most popular posts to display on landing page
+// @access  Test
+
+router.get("/displayposts/popular", async (req, res) => {
+  try {
+    const posts = await Post.find().limit(4).sort({ likes: -1 });
     res.json(posts);
   } catch (err) {
     console.error(err.message);
